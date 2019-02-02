@@ -11,7 +11,18 @@
 		E92A427B2206010F004B18A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92A42792206010F004B18A5 /* Main.storyboard */; };
 		E96790472206016D00C0EBEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96790462206016D00C0EBEC /* AppDelegate.swift */; };
 		E96790502206026500C0EBEC /* otrdecoder in Copy External Tools */ = {isa = PBXBuildFile; fileRef = E967904E2206024600C0EBEC /* otrdecoder */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		E96790592206049700C0EBEC /* CocoaCutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96790582206049700C0EBEC /* CocoaCutterTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E967905B2206049700C0EBEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E92A42682206010E004B18A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E92A426F2206010E004B18A5;
+			remoteInfo = CocoaCutter;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E967904F2206025300C0EBEC /* Copy External Tools */ = {
@@ -37,10 +48,20 @@
 		E967904B220601D600C0EBEC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E967904C220601D600C0EBEC /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		E967904E2206024600C0EBEC /* otrdecoder */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = otrdecoder; sourceTree = "<group>"; };
+		E96790562206049700C0EBEC /* CocoaCutterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaCutterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E96790582206049700C0EBEC /* CocoaCutterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaCutterTests.swift; sourceTree = "<group>"; };
+		E967905A2206049700C0EBEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E92A426D2206010E004B18A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E96790532206049700C0EBEC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,6 +77,7 @@
 				E92A42722206010E004B18A5 /* CocoaCutter */,
 				E967904D2206024600C0EBEC /* ExternalTools */,
 				E967904A220601C000C0EBEC /* Documents */,
+				E96790572206049700C0EBEC /* CocoaCutterTests */,
 				E92A42712206010E004B18A5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				E92A42702206010E004B18A5 /* CocoaCutter.app */,
+				E96790562206049700C0EBEC /* CocoaCutterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +152,15 @@
 			path = ExternalTools;
 			sourceTree = "<group>";
 		};
+		E96790572206049700C0EBEC /* CocoaCutterTests */ = {
+			isa = PBXGroup;
+			children = (
+				E96790582206049700C0EBEC /* CocoaCutterTests.swift */,
+				E967905A2206049700C0EBEC /* Info.plist */,
+			);
+			path = CocoaCutterTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,6 +183,24 @@
 			productReference = E92A42702206010E004B18A5 /* CocoaCutter.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E96790552206049700C0EBEC /* CocoaCutterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E967905D2206049700C0EBEC /* Build configuration list for PBXNativeTarget "CocoaCutterTests" */;
+			buildPhases = (
+				E96790522206049700C0EBEC /* Sources */,
+				E96790532206049700C0EBEC /* Frameworks */,
+				E96790542206049700C0EBEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E967905C2206049700C0EBEC /* PBXTargetDependency */,
+			);
+			name = CocoaCutterTests;
+			productName = CocoaCutterTests;
+			productReference = E96790562206049700C0EBEC /* CocoaCutterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -163,6 +213,10 @@
 				TargetAttributes = {
 					E92A426F2206010E004B18A5 = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					E96790552206049700C0EBEC = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E92A426F2206010E004B18A5;
 					};
 				};
 			};
@@ -180,6 +234,7 @@
 			projectRoot = "";
 			targets = (
 				E92A426F2206010E004B18A5 /* CocoaCutter */,
+				E96790552206049700C0EBEC /* CocoaCutterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -191,6 +246,13 @@
 			files = (
 				E92A42782206010F004B18A5 /* Assets.xcassets in Resources */,
 				E92A427B2206010F004B18A5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E96790542206049700C0EBEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +288,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E96790522206049700C0EBEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E96790592206049700C0EBEC /* CocoaCutterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E967905C2206049700C0EBEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E92A426F2206010E004B18A5 /* CocoaCutter */;
+			targetProxy = E967905B2206049700C0EBEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E92A42792206010F004B18A5 /* Main.storyboard */ = {
@@ -391,6 +469,44 @@
 			};
 			name = Release;
 		};
+		E967905E2206049700C0EBEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CocoaCutterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.meandmymac.macos.CocoaCutterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CocoaCutter.app/Contents/MacOS/CocoaCutter";
+			};
+			name = Debug;
+		};
+		E967905F2206049700C0EBEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CocoaCutterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.meandmymac.macos.CocoaCutterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CocoaCutter.app/Contents/MacOS/CocoaCutter";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -408,6 +524,15 @@
 			buildConfigurations = (
 				E92A42812206010F004B18A5 /* Debug */,
 				E92A42822206010F004B18A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E967905D2206049700C0EBEC /* Build configuration list for PBXNativeTarget "CocoaCutterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E967905E2206049700C0EBEC /* Debug */,
+				E967905F2206049700C0EBEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
