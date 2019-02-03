@@ -12,6 +12,7 @@
 		E96790472206016D00C0EBEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96790462206016D00C0EBEC /* AppDelegate.swift */; };
 		E96790502206026500C0EBEC /* otrdecoder in Copy External Tools */ = {isa = PBXBuildFile; fileRef = E967904E2206024600C0EBEC /* otrdecoder */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E96790592206049700C0EBEC /* CocoaCutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96790582206049700C0EBEC /* CocoaCutterTests.swift */; };
+		E96790622206518C00C0EBEC /* OtrDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96790612206518C00C0EBEC /* OtrDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,13 @@
 		E96790562206049700C0EBEC /* CocoaCutterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaCutterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96790582206049700C0EBEC /* CocoaCutterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaCutterTests.swift; sourceTree = "<group>"; };
 		E967905A2206049700C0EBEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E96790612206518C00C0EBEC /* OtrDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtrDecoder.swift; sourceTree = "<group>"; };
+		E96790632206E9D300C0EBEC /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
+		E96790652206EA7C00C0EBEC /* update.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = update.sh; sourceTree = "<group>"; };
+		E96790662206EA7C00C0EBEC /* bootstrap.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bootstrap.sh; sourceTree = "<group>"; };
+		E96790672206EA7C00C0EBEC /* update-debug.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "update-debug.sh"; sourceTree = "<group>"; };
+		E96790682206EA7C00C0EBEC /* bootstrap-debug.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "bootstrap-debug.sh"; sourceTree = "<group>"; };
+		E96790692206EA7C00C0EBEC /* check-update.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "check-update.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E92A42722206010E004B18A5 /* CocoaCutter */,
+				E96790642206EA7C00C0EBEC /* Scripts */,
 				E967904D2206024600C0EBEC /* ExternalTools */,
 				E967904A220601C000C0EBEC /* Documents */,
 				E96790572206049700C0EBEC /* CocoaCutterTests */,
@@ -106,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				E96790452206016D00C0EBEC /* Application */,
+				E96790602206515200C0EBEC /* Utilities */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -129,6 +139,7 @@
 		E96790492206019000C0EBEC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E96790632206E9D300C0EBEC /* Cartfile */,
 				E92A427C2206010F004B18A5 /* Info.plist */,
 				E92A427D2206010F004B18A5 /* CocoaCutter.entitlements */,
 			);
@@ -161,6 +172,26 @@
 			path = CocoaCutterTests;
 			sourceTree = "<group>";
 		};
+		E96790602206515200C0EBEC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E96790612206518C00C0EBEC /* OtrDecoder.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E96790642206EA7C00C0EBEC /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				E96790652206EA7C00C0EBEC /* update.sh */,
+				E96790662206EA7C00C0EBEC /* bootstrap.sh */,
+				E96790672206EA7C00C0EBEC /* update-debug.sh */,
+				E96790682206EA7C00C0EBEC /* bootstrap-debug.sh */,
+				E96790692206EA7C00C0EBEC /* check-update.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,6 +218,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E967905D2206049700C0EBEC /* Build configuration list for PBXNativeTarget "CocoaCutterTests" */;
 			buildPhases = (
+				E967906A2206EDE500C0EBEC /* Check for Carthage  updates */,
 				E96790522206049700C0EBEC /* Sources */,
 				E96790532206049700C0EBEC /* Frameworks */,
 				E96790542206049700C0EBEC /* Resources */,
@@ -277,6 +309,24 @@
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 		};
+		E967906A2206EDE500C0EBEC /* Check for Carthage  updates */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Check for Carthage  updates";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage outdated --xcode-warnings\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -285,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E96790472206016D00C0EBEC /* AppDelegate.swift in Sources */,
+				E96790622206518C00C0EBEC /* OtrDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  OtrDecoder.swift
 //  CocoaCutter
 //
 //  Created by Thomas Bonk on 02.02.19.
@@ -18,28 +18,29 @@
 //  limitations under the License.
 //
 
-import Cocoa
+import Foundation
 
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+/**
+ This class wraps the otrdecoder executable to decode .otrkey files.
+ */
+class OtrDecoder {
     
-    // MARK: - Static Properties
+    // MARK: - Properties
     
-    static var shared: AppDelegate? {
-        return NSApplication.shared.delegate as? AppDelegate
+    private var email: String
+    private var password: String
+    
+    
+    // MARK: - Initialization
+    
+    /**
+     Initializer that receives the email and the password to decode files.
+     - Parameters
+        - email     the email address registered at OnlineTVReceorder
+        - password  the password
+     */
+    public init(email: String, password: String) {
+        self.email = email
+        self.password = password
     }
-    
-    
-    // MARK: - NSApplicationDelegate
-
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-    }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-
-
 }
-
