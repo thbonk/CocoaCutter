@@ -17,6 +17,7 @@
 		E967906F2206F0E400C0EBEC /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967906D2206F0E400C0EBEC /* Swinject.framework */; };
 		E96790712206F10000C0EBEC /* ExtAppKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E967906C2206F0E400C0EBEC /* ExtAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E96790722206F10000C0EBEC /* Swinject.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E967906D2206F0E400C0EBEC /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E96790742207702D00C0EBEC /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = E96790732207702D00C0EBEC /* .travis.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		E96790692206EA7C00C0EBEC /* check-update.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "check-update.sh"; sourceTree = "<group>"; };
 		E967906C2206F0E400C0EBEC /* ExtAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExtAppKit.framework; path = Carthage/Build/Mac/ExtAppKit.framework; sourceTree = "<group>"; };
 		E967906D2206F0E400C0EBEC /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/Mac/Swinject.framework; sourceTree = "<group>"; };
+		E96790732207702D00C0EBEC /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		E96790492206019000C0EBEC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E96790732207702D00C0EBEC /* .travis.yml */,
 				E96790632206E9D300C0EBEC /* Cartfile */,
 				E92A427C2206010F004B18A5 /* Info.plist */,
 				E92A427D2206010F004B18A5 /* CocoaCutter.entitlements */,
@@ -307,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E96790742207702D00C0EBEC /* .travis.yml in Resources */,
 				E92A42782206010F004B18A5 /* Assets.xcassets in Resources */,
 				E92A427B2206010F004B18A5 /* Main.storyboard in Resources */,
 			);
