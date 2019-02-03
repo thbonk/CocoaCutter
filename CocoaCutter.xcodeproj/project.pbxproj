@@ -13,6 +13,10 @@
 		E96790502206026500C0EBEC /* otrdecoder in Copy External Tools */ = {isa = PBXBuildFile; fileRef = E967904E2206024600C0EBEC /* otrdecoder */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E96790592206049700C0EBEC /* CocoaCutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96790582206049700C0EBEC /* CocoaCutterTests.swift */; };
 		E96790622206518C00C0EBEC /* OtrDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96790612206518C00C0EBEC /* OtrDecoder.swift */; };
+		E967906E2206F0E400C0EBEC /* ExtAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967906C2206F0E400C0EBEC /* ExtAppKit.framework */; };
+		E967906F2206F0E400C0EBEC /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967906D2206F0E400C0EBEC /* Swinject.framework */; };
+		E96790712206F10000C0EBEC /* ExtAppKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E967906C2206F0E400C0EBEC /* ExtAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E96790722206F10000C0EBEC /* Swinject.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E967906D2206F0E400C0EBEC /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,18 @@
 			name = "Copy External Tools";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E96790702206F0EF00C0EBEC /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E96790712206F10000C0EBEC /* ExtAppKit.framework in Copy Frameworks */,
+				E96790722206F10000C0EBEC /* Swinject.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +75,8 @@
 		E96790672206EA7C00C0EBEC /* update-debug.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "update-debug.sh"; sourceTree = "<group>"; };
 		E96790682206EA7C00C0EBEC /* bootstrap-debug.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "bootstrap-debug.sh"; sourceTree = "<group>"; };
 		E96790692206EA7C00C0EBEC /* check-update.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "check-update.sh"; sourceTree = "<group>"; };
+		E967906C2206F0E400C0EBEC /* ExtAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExtAppKit.framework; path = Carthage/Build/Mac/ExtAppKit.framework; sourceTree = "<group>"; };
+		E967906D2206F0E400C0EBEC /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/Mac/Swinject.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E967906E2206F0E400C0EBEC /* ExtAppKit.framework in Frameworks */,
+				E967906F2206F0E400C0EBEC /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +108,7 @@
 				E967904A220601C000C0EBEC /* Documents */,
 				E96790572206049700C0EBEC /* CocoaCutterTests */,
 				E92A42712206010E004B18A5 /* Products */,
+				E967906B2206F0E400C0EBEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,6 +213,15 @@
 			path = Scripts;
 			sourceTree = "<group>";
 		};
+		E967906B2206F0E400C0EBEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E967906C2206F0E400C0EBEC /* ExtAppKit.framework */,
+				E967906D2206F0E400C0EBEC /* Swinject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -204,6 +234,7 @@
 				E92A426D2206010E004B18A5 /* Frameworks */,
 				E92A426E2206010E004B18A5 /* Resources */,
 				E967904F2206025300C0EBEC /* Copy External Tools */,
+				E96790702206F0EF00C0EBEC /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -491,6 +522,10 @@
 				CODE_SIGN_ENTITLEMENTS = CocoaCutter/CocoaCutter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = CocoaCutter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -509,6 +544,10 @@
 				CODE_SIGN_ENTITLEMENTS = CocoaCutter/CocoaCutter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = CocoaCutter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

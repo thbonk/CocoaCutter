@@ -1,0 +1,5 @@
+language: swift
+osx_image: xcode10.1
+script: 
+    Scripts/bootstrap.sh
+    xcodebuild clean build test -project CocoaCutter.xcodeproj -scheme CocoaCutter -sdk macosx -destination arch=x86_64 -configuration Release ONLY_ACTIVE_ARCH=N

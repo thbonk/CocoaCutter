@@ -19,6 +19,7 @@
 //
 
 import Cocoa
+import Swinject
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -28,6 +29,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     static var shared: AppDelegate? {
         return NSApplication.shared.delegate as? AppDelegate
     }
+    
+    
+    // MARK: - Properties
+    
+    let dependencies: Container = {
+        let container = Container()
+        
+        return container
+    }()
     
     
     // MARK: - NSApplicationDelegate
@@ -43,3 +53,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 }
 
+
+func inject<Service>(_ serviceType: Service.Type) -> Service? {
+    return AppDelegate.shared?.dependencies.resolve(serviceType)
+}
