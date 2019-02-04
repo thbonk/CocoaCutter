@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3BB96F5220865DB003E18D5 /* OtrDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96790612206518C00C0EBEC /* OtrDecoder.swift */; };
 		E92A42782206010F004B18A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E92A42772206010F004B18A5 /* Assets.xcassets */; };
 		E92A427B2206010F004B18A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92A42792206010F004B18A5 /* Main.storyboard */; };
 		E96790472206016D00C0EBEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96790462206016D00C0EBEC /* AppDelegate.swift */; };
@@ -379,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E96790592206049700C0EBEC /* CocoaCutterTests.swift in Sources */,
+				B3BB96F5220865DB003E18D5 /* OtrDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
