@@ -3,7 +3,7 @@ osx_image: xcode10.1
 install: ./Scripts/bootstrap.sh
 xcode_destination: platform=macOS
 xcode_project: CocoaCutter.xcodeproj
-xcode_scheme: CocoaCutterTests
+xcode_scheme: CocoaCutter
 
 #script: 
 #    - ./Scripts/bootstrap.sh
