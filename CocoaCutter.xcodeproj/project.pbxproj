@@ -80,6 +80,7 @@
 		E967906C2206F0E400C0EBEC /* ExtAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExtAppKit.framework; path = Carthage/Build/Mac/ExtAppKit.framework; sourceTree = "<group>"; };
 		E967906D2206F0E400C0EBEC /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/Mac/Swinject.framework; sourceTree = "<group>"; };
 		E96790732207702D00C0EBEC /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
+		E9FE5B432208C1F500C597AB /* CocoaCutterSecrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = CocoaCutterSecrets.xcconfig; path = ../../CocoaCutterSecrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				E96790582206049700C0EBEC /* CocoaCutterTests.swift */,
+				E9FE5B432208C1F500C597AB /* CocoaCutterSecrets.xcconfig */,
 				E967905A2206049700C0EBEC /* Info.plist */,
 			);
 			path = CocoaCutterTests;
@@ -569,6 +571,7 @@
 		};
 		E967905E2206049700C0EBEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9FE5B432208C1F500C597AB /* CocoaCutterSecrets.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

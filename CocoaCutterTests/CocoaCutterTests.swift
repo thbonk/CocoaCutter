@@ -21,7 +21,9 @@ class CocoaCutterTests: XCTestCase {
     }
 
     func testOtrDecoderCreation() {
-        let otrDecoder = OtrDecoder(email: otrEmail, password: otrPassword)
+        let _ = OtrDecoder(email: otrEmail, password: otrPassword)
+            
+        XCTAssert(true)
     }
 
     func testPerformanceExample() {
