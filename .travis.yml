@@ -1,11 +1,10 @@
 language: swift
 osx_image: xcode10.1
-install: ./Scripts/bootstrap.sh
+install: "./Scripts/bootstrap.sh"
 xcode_destination: platform=macOS
 xcode_project: CocoaCutter.xcodeproj
 xcode_scheme: CocoaCutter
-
-#script: 
-#    - ./Scripts/bootstrap.sh
-#    - xcodebuild test -project CocoaCutter.xcodeproj -scheme CocoaCutter -sdk macosx10.14 -destination arch=x86_64
-#    - xcodebuild clean build -project CocoaCutter.xcodeproj -scheme CocoaCutter -sdk macosx10.14 -destination arch=x86_64 -configuration Release ONLY_ACTIVE_ARCH=N
+env:
+  global:
+  - secure: RfvEFASbjtm2d/fvimeWDfTBpxKqH0vh1sGwVZacUcLBv9Y71whu7tw+Ku8zkpsZune2kg/xJXUws6Vw3wg9yM7RO7nI8GwvOVFkoTFojsHbwUolITWA8l/1PmMIe+g3Qk7JNQ9YfvmsWEbwOLyvu+HipDUFOJ7rw6gCnAL2QjnbVXzFrIZRnk3rDEFTQtWCuewX5yJ/7Rp1+v9eGgT6xIfdlz6yrJNc+RXC4sOPbbxNAX3kkGcfUzp1yHUoplGHpFQEX1tb0SzeRs9nqyrGRpRaEYNmnKaJzZYkX+qwdjhoMNpI+nSXyJ+8zIjj9vVdBHz+Dl5sAUqv7hA9h3sUf/TuN0esfRJM1/9QkY/PpyLH0RD80xV8AtcNGplAEJN1oqmA7Xx1YEEbq4TlgJfGfP8dddKkpZVlbzlrFwBCV1WDslm8vWhsJsGftEIAUSJiSL+Q5QYs0lCcqEiVTWY1RojDOIn4kdmKXKWPe2tOgoAcaIxiKo+jejBcMBh6xhelGp5EwNO2iwFQX7AoOLd+6QoRTxhZBcbi0ma65OfobJik7t/3toFkFmYdE7W2GEFzQSFSXXQQSBcTeh2g6j5YHES3jNUnZQ5sj6mM5WETojffSV0tNicud2MJa5O3X+kj9LlmkjnMcKBqc72K/DHoQYyLi24T0/0aw4S1A8Ir1n4=
+  - secure: nKFwf0LFGzRm6WuZ16gCOjxmwFE+aXPmfQC7kq+bF64nBeqnqDpJqrpHASlV+6fPkG+pn3JguaW2ZPIGm42Fcv9HgpVakpopLvoxsxauOFLDg8RBTiBLw7VDItidHzDQQpKFyWhVpWqJHV4R0YFjVasfb+APj3ofD+nMPAMvL+L1ju/9DP/kkwuExIFRaSY71co7eIigwZwTWe7Z4gA78FLINCXWMUwK5s9gqNpd1aehZBXAhKlbKSWi3K4k9n6YCNdQeJ2qahe06mqJenIqRom/EiDVasR30uzR27pWD1r0sKVwZgTlgFw/Hiek6rmsWwhMufaGis5bAUMIgO70BS2Bxg7HIsYEnddcAbMcb3eUSVCgBSc2JgkwbsJYUiSECElruti2Zmou8Q1esDgi1cGGYIOTDJ8M9KLNFZwlqypcXNB9kVzWCn67YfQtBaaRqBvbXZ8IiUq3al6ewlR7cue+DiAWPK08to5r82o61z1/q3TOlx7n1Mq8rKzIC4svIda5o+FVNMrfddUji8Rrz5r+BcrNgDF1WRfLyuu/LuFzVOwGpRgvA5NdJiRHqAMKp6JmafelhFloNPXDFo9/68iA2l2zlAUb2py8wjEgx0bq8DnSjpBOYVuJiSniSloOj45seYlI+ck+k1u0t4YX0t9NAa2FXesQzGNJ53uklPo=
