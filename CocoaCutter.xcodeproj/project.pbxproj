@@ -110,6 +110,7 @@
 				E967904D2206024600C0EBEC /* ExternalTools */,
 				E967904A220601C000C0EBEC /* Documents */,
 				E96790572206049700C0EBEC /* CocoaCutterTests */,
+				E9FE5B4E2209F4A000C597AB /* Configurations */,
 				E92A42712206010E004B18A5 /* Products */,
 				E967906B2206F0E400C0EBEC /* Frameworks */,
 			);
@@ -224,6 +225,13 @@
 				E967906D2206F0E400C0EBEC /* Swinject.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9FE5B4E2209F4A000C597AB /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

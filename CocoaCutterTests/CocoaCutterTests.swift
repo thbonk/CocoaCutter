@@ -13,8 +13,12 @@ class CocoaCutterTests: XCTestCase {
     private var otrPassword: String!
 
     override func setUp() {
-        otrEmail = ProcessInfo.processInfo.environment["OTR_EMAIL"]
-        otrPassword = ProcessInfo.processInfo.environment["OTR_PASSWORD"]
+        // OTREMAIL and OTRPASSWORD needs to be in environment variables,
+        // e.g. locally in /etc/launchd.conf:
+        // setenv OTREMAIL email
+        // setenv OTRPASSWORD password
+        otrEmail = ProcessInfo.processInfo.environment["OTREMAIL"]
+        otrPassword = ProcessInfo.processInfo.environment["OTRPASSWORD"]
     }
 
     override func tearDown() {
