@@ -1,5 +1,5 @@
 //
-//  CocoaCutterTests.swift
+//  OtrDecoderTests.swift
 //  CocoaCutterTests
 //
 //  Created by Thomas Bonk on 02.02.19.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class CocoaCutterTests: XCTestCase {
+class OtrDecoderTests: XCTestCase {
     private var otrEmail: String!
     private var otrPassword: String!
 

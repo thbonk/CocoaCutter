@@ -12,7 +12,7 @@
 		E92A427B2206010F004B18A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92A42792206010F004B18A5 /* Main.storyboard */; };
 		E96790472206016D00C0EBEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96790462206016D00C0EBEC /* AppDelegate.swift */; };
 		E96790502206026500C0EBEC /* otrdecoder in Copy External Tools */ = {isa = PBXBuildFile; fileRef = E967904E2206024600C0EBEC /* otrdecoder */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		E96790592206049700C0EBEC /* CocoaCutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96790582206049700C0EBEC /* CocoaCutterTests.swift */; };
+		E96790592206049700C0EBEC /* OtrDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96790582206049700C0EBEC /* OtrDecoderTests.swift */; };
 		E96790622206518C00C0EBEC /* OtrDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96790612206518C00C0EBEC /* OtrDecoder.swift */; };
 		E967906E2206F0E400C0EBEC /* ExtAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967906C2206F0E400C0EBEC /* ExtAppKit.framework */; };
 		E967906F2206F0E400C0EBEC /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E967906D2206F0E400C0EBEC /* Swinject.framework */; };
@@ -68,7 +68,7 @@
 		E967904C220601D600C0EBEC /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		E967904E2206024600C0EBEC /* otrdecoder */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = otrdecoder; sourceTree = "<group>"; };
 		E96790562206049700C0EBEC /* CocoaCutterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaCutterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E96790582206049700C0EBEC /* CocoaCutterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaCutterTests.swift; sourceTree = "<group>"; };
+		E96790582206049700C0EBEC /* OtrDecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtrDecoderTests.swift; sourceTree = "<group>"; };
 		E967905A2206049700C0EBEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E96790612206518C00C0EBEC /* OtrDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtrDecoder.swift; sourceTree = "<group>"; };
 		E96790632206E9D300C0EBEC /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
@@ -192,7 +192,7 @@
 		E96790572206049700C0EBEC /* CocoaCutterTests */ = {
 			isa = PBXGroup;
 			children = (
-				E96790582206049700C0EBEC /* CocoaCutterTests.swift */,
+				E96790582206049700C0EBEC /* OtrDecoderTests.swift */,
 				E967905A2206049700C0EBEC /* Info.plist */,
 			);
 			path = CocoaCutterTests;
@@ -387,7 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E96790592206049700C0EBEC /* CocoaCutterTests.swift in Sources */,
+				E96790592206049700C0EBEC /* OtrDecoderTests.swift in Sources */,
 				B3BB96F5220865DB003E18D5 /* OtrDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
