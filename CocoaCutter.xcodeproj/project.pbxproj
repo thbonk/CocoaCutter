@@ -19,6 +19,7 @@
 		E96790712206F10000C0EBEC /* ExtAppKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E967906C2206F0E400C0EBEC /* ExtAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E96790722206F10000C0EBEC /* Swinject.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E967906D2206F0E400C0EBEC /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E96790742207702D00C0EBEC /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = E96790732207702D00C0EBEC /* .travis.yml */; };
+		E9E24F7C220A0F0900D7EFF5 /* otrdecoder in Resources */ = {isa = PBXBuildFile; fileRef = E967904E2206024600C0EBEC /* otrdecoder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		E967906C2206F0E400C0EBEC /* ExtAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExtAppKit.framework; path = Carthage/Build/Mac/ExtAppKit.framework; sourceTree = "<group>"; };
 		E967906D2206F0E400C0EBEC /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/Mac/Swinject.framework; sourceTree = "<group>"; };
 		E96790732207702D00C0EBEC /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
+		E9E24F7D220B633000D7EFF5 /* ExternalSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ExternalSettings.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				E96790732207702D00C0EBEC /* .travis.yml */,
 				E96790632206E9D300C0EBEC /* Cartfile */,
 				E92A427C2206010F004B18A5 /* Info.plist */,
+				E9E24F7D220B633000D7EFF5 /* ExternalSettings.xcconfig */,
 				E92A427D2206010F004B18A5 /* CocoaCutter.entitlements */,
 			);
 			name = Resources;
@@ -242,7 +245,6 @@
 			buildConfigurationList = E92A42802206010F004B18A5 /* Build configuration list for PBXNativeTarget "CocoaCutter" */;
 			buildPhases = (
 				E92A426C2206010E004B18A5 /* Sources */,
-				E96790512206027100C0EBEC /* Increment Build Number */,
 				E92A426D2206010E004B18A5 /* Frameworks */,
 				E92A426E2206010E004B18A5 /* Resources */,
 				E967904F2206025300C0EBEC /* Copy External Tools */,
@@ -329,30 +331,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E24F7C220A0F0900D7EFF5 /* otrdecoder in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E96790512206027100C0EBEC /* Increment Build Number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Increment Build Number";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
-		};
 		E967906A2206EDE500C0EBEC /* Check for Carthage  updates */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,6 +401,7 @@
 /* Begin XCBuildConfiguration section */
 		E92A427E2206010F004B18A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9E24F7D220B633000D7EFF5 /* ExternalSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -477,6 +463,7 @@
 		};
 		E92A427F2206010F004B18A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9E24F7D220B633000D7EFF5 /* ExternalSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -545,7 +532,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = de.meandmymac.macos.CocoaCutter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -568,7 +555,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = de.meandmymac.macos.CocoaCutter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

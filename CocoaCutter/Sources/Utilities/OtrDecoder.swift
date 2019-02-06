@@ -30,6 +30,10 @@ class OtrDecoder {
     private var email: String
     private var password: String
     
+    private var decoderBinaryPath: String {
+        return Bundle.main.path(forResource: "otrdecoder", ofType: nil)!
+    }
+    
     
     // MARK: - Initialization
     
@@ -42,5 +46,48 @@ class OtrDecoder {
     public init(email: String, password: String) {
         self.email = email
         self.password = password
+    }
+    
+    
+    // MARK: - Decoding
+    
+    public func decode(
+        file filepath: String,
+        outputPath: String? = nil,
+        bufferSize: Int = 10240,
+        dontVerify: Bool = false,
+        forceOverwrite: Bool = true,
+        progress: ((Int) -> ())? = nil, completed: (() -> ())? = nil) {
+        
+        let outputDirectory =
+            outputPath != nil ? outputPath! : NSString(string: filepath).deletingLastPathComponent
+        let pipe = Pipe()
+        let process = Process()
+        let fileHandle = pipe.fileHandleForReading
+        
+        process.launchPath = decoderBinaryPath
+        process.arguments = [
+            "-e", email,
+            "-p", password,
+            "-i", filepath,
+            "-o", outputDirectory,
+            "-b", "\(bufferSize)"
+        ]
+        
+        if dontVerify {
+            process.arguments?.append("-q")
+        }
+        
+        if forceOverwrite {
+            process.arguments?.append("-f")
+        }
+        
+        process.standardOutput = pipe
+        process.launch()
+        
+        var output: String! = ""
+        while process.isRunning {
+            output += String(data: fileHandle.readDataToEndOfFile(), encoding: String.Encoding.ascii)!
+        }
     }
 }

@@ -29,12 +29,11 @@ class OtrDecoderTests: XCTestCase {
             
         XCTAssert(true)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testDecodeFile() {
+        let decoder = OtrDecoder(email: otrEmail, password: otrPassword)
+        
+        //decoder.decode(file: "/Users/thomas/Projects/macOS/CocoaCutter/CocoaCutterTests/testdata/Tagesschau_19.02.01_20-00_ard_15_TVOON_DE.mpg.mp4.otrkey")
     }
 
 }
