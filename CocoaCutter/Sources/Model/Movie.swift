@@ -6,7 +6,7 @@
 //  Copyright © 2019 Thomas Bonk Softwareentwicklung. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
 @objc class Movie: NSObject {
     

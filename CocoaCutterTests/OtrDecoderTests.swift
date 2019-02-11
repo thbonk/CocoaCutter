@@ -20,20 +20,28 @@ class OtrDecoderTests: XCTestCase {
         otrEmail = ProcessInfo.processInfo.environment["OTREMAIL"]
         otrPassword = ProcessInfo.processInfo.environment["OTRPASSWORD"]
     }
-
-    override func tearDown() {
-    }
-
-    func testOtrDecoderCreation() {
-        let _ = OtrDecoder(email: otrEmail, password: otrPassword)
-            
-        XCTAssert(true)
-    }
     
-    func testDecodeFile() {
+    func test_decoding_file_is_successful() {
         let decoder = OtrDecoder(email: otrEmail, password: otrPassword)
+        let movie = Movie(withQualifiedFilename: "")
+        let decodingFinished = XCTestExpectation(description: "Decode file")
+        var progress: Int = 0
+        var successful: Bool = true
         
-        //decoder.decode(file: "/Users/thomas/Projects/macOS/CocoaCutter/CocoaCutterTests/testdata/Tagesschau_19.02.01_20-00_ard_15_TVOON_DE.mpg.mp4.otrkey")
+        decoder.decode(
+            movie,
+            progress: { percentage in
+                progress = percentage
+            },
+            completion: { success in
+                successful = success
+                decodingFinished.fulfill()
+            })
+        
+        wait(for: [decodingFinished], timeout: 240.0)
+        
+        XCTAssert(progress == 100, "Progress is 100%")
+        XCTAssert(successful, "Decoding was successful")
     }
 
 }

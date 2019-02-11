@@ -23,6 +23,11 @@
 		E9E24F84220CDA3500D7EFF5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E24F83220CDA3500D7EFF5 /* Movie.swift */; };
 		E9E24F85220ECF3100D7EFF5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E24F83220CDA3500D7EFF5 /* Movie.swift */; };
 		E9E24F87220ECF5200D7EFF5 /* MovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E24F86220ECF5200D7EFF5 /* MovieTests.swift */; };
+		E9E24F8B220EEBB600D7EFF5 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E24F8A220EEBB600D7EFF5 /* Credentials.swift */; };
+		E9E24F8D220EEE3900D7EFF5 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E24F8C220EEE3900D7EFF5 /* KeychainAccess.framework */; };
+		E9E24F8E220EEE4900D7EFF5 /* KeychainAccess.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E9E24F8C220EEE3900D7EFF5 /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E9E24F8F2211DB2700D7EFF5 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E24F8A220EEBB600D7EFF5 /* Credentials.swift */; };
+		E9E24F902211EF0100D7EFF5 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E24F8C220EEE3900D7EFF5 /* KeychainAccess.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E9E24F8E220EEE4900D7EFF5 /* KeychainAccess.framework in Copy Frameworks */,
 				E96790712206F10000C0EBEC /* ExtAppKit.framework in Copy Frameworks */,
 				E96790722206F10000C0EBEC /* Swinject.framework in Copy Frameworks */,
 			);
@@ -87,6 +93,9 @@
 		E9E24F7D220B633000D7EFF5 /* ExternalSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ExternalSettings.xcconfig; sourceTree = "<group>"; };
 		E9E24F83220CDA3500D7EFF5 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E9E24F86220ECF5200D7EFF5 /* MovieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTests.swift; sourceTree = "<group>"; };
+		E9E24F89220EEB4800D7EFF5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		E9E24F8A220EEBB600D7EFF5 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		E9E24F8C220EEE3900D7EFF5 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/Mac/KeychainAccess.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,7 @@
 			files = (
 				E967906E2206F0E400C0EBEC /* ExtAppKit.framework in Frameworks */,
 				E967906F2206F0E400C0EBEC /* Swinject.framework in Frameworks */,
+				E9E24F8D220EEE3900D7EFF5 /* KeychainAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E24F902211EF0100D7EFF5 /* KeychainAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +183,7 @@
 		E96790492206019000C0EBEC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E9E24F89220EEB4800D7EFF5 /* .gitignore */,
 				E96790732207702D00C0EBEC /* .travis.yml */,
 				E96790632206E9D300C0EBEC /* Cartfile */,
 				E92A427C2206010F004B18A5 /* Info.plist */,
@@ -231,6 +243,7 @@
 		E967906B2206F0E400C0EBEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9E24F8C220EEE3900D7EFF5 /* KeychainAccess.framework */,
 				E967906C2206F0E400C0EBEC /* ExtAppKit.framework */,
 				E967906D2206F0E400C0EBEC /* Swinject.framework */,
 			);
@@ -241,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				E9E24F83220CDA3500D7EFF5 /* Movie.swift */,
+				E9E24F8A220EEBB600D7EFF5 /* Credentials.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,6 +274,7 @@
 			buildConfigurationList = E92A42802206010F004B18A5 /* Build configuration list for PBXNativeTarget "CocoaCutter" */;
 			buildPhases = (
 				E92A426C2206010E004B18A5 /* Sources */,
+				E9E24F88220EEA4800D7EFF5 /* Increase Build Number */,
 				E92A426D2206010E004B18A5 /* Frameworks */,
 				E92A426E2206010E004B18A5 /* Resources */,
 				E967904F2206025300C0EBEC /* Copy External Tools */,
@@ -371,6 +386,24 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage outdated --xcode-warnings\n";
 		};
+		E9E24F88220EEA4800D7EFF5 /* Increase Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Increase Build Number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(grep \"^BUILD_NUMBER=\" \"${PROJECT_DIR}/CocoaCutter/ExternalSettings.xcconfig\" | cut -d'=' -f2)\nbuildNumber=$(($buildNumber + 1))\nsed -i -e \"s/^\\(BUILD_NUMBER\\s*=\\s*\\).*\\$/\\1$buildNumber/\" ${PROJECT_DIR}/CocoaCutter/ExternalSettings.xcconfig\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -380,6 +413,7 @@
 			files = (
 				E96790472206016D00C0EBEC /* AppDelegate.swift in Sources */,
 				E96790622206518C00C0EBEC /* OtrDecoder.swift in Sources */,
+				E9E24F8B220EEBB600D7EFF5 /* Credentials.swift in Sources */,
 				E9E24F84220CDA3500D7EFF5 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +426,7 @@
 				B3BB96F5220865DB003E18D5 /* OtrDecoder.swift in Sources */,
 				E9E24F87220ECF5200D7EFF5 /* MovieTests.swift in Sources */,
 				E9E24F85220ECF3100D7EFF5 /* Movie.swift in Sources */,
+				E9E24F8F2211DB2700D7EFF5 /* Credentials.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +621,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = CocoaCutterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -605,6 +644,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = CocoaCutterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

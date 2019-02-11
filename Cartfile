@@ -23,3 +23,6 @@ github "meandmymac-de/ExtAppKit" "master"
 
 # Dependency Injection
 github "Swinject/Swinject" ~> 2.5.0
+
+# Simple Keychain Access
+github "kishikawakatsumi/KeychainAccess"

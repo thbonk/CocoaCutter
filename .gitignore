@@ -1,6 +1,9 @@
 # Created by https://www.gitignore.io/api/xcode,swift,macos,carthage
 # Edit at https://www.gitignore.io/?templates=xcode,swift,macos,carthage
 
+### Project Specific ###
+CocoaCutter/*.xcconfig-e
+
 ### Carthage ###
 # Carthage
 #

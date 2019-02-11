@@ -23,7 +23,7 @@ import Foundation
 /**
  This class wraps the otrdecoder executable to decode .otrkey files.
  */
-class OtrDecoder {
+@objc class OtrDecoder: NSObject {
     
     // MARK: - Properties
     
@@ -37,12 +37,10 @@ class OtrDecoder {
     
     // MARK: - Initialization
     
-    /**
-     Initializer that receives the email and the password to decode files.
-     - Parameters
-        - email     the email address registered at OnlineTVReceorder
-        - password  the password
-     */
+    public convenience init(credentials: Credentials) {
+        self.init(email: credentials.otrEmail!, password: credentials.otrPassword!)
+    }
+
     public init(email: String, password: String) {
         self.email = email
         self.password = password
@@ -52,42 +50,92 @@ class OtrDecoder {
     // MARK: - Decoding
     
     public func decode(
-        file filepath: String,
-        outputPath: String? = nil,
-        bufferSize: Int = 10240,
-        dontVerify: Bool = false,
-        forceOverwrite: Bool = true,
-        progress: ((Int) -> ())? = nil, completed: (() -> ())? = nil) {
+        _ movie: Movie,
+        verifyOtrKeys: Bool = false,
+        forceOverwritingOfFiles: Bool = false,
+        progress: ((Int) -> ())? = nil,
+        completion: ((Bool) -> ())? = nil) {
         
-        let outputDirectory =
-            outputPath != nil ? outputPath! : NSString(string: filepath).deletingLastPathComponent
-        let pipe = Pipe()
-        let process = Process()
-        let fileHandle = pipe.fileHandleForReading
+        DispatchQueue(label: "decode_\(movie.fileName)", qos: .background).async {
+            let process = Process()
+            let pipe = Pipe()
+            
+            process.standardOutput = pipe
+            process.standardError = process.standardOutput
+            process.launchPath = self.decoderBinaryPath
+            process.arguments = self.argumentsFor(
+                movie: movie,
+                verifyOtrKeys: verifyOtrKeys,
+                forceOverwritingOfFiles: forceOverwritingOfFiles)
+            
+            NotificationCenter
+                .default
+                .addObserver(
+                    forName: FileHandle.readCompletionNotification,
+                    object: pipe.fileHandleForReading,
+                    queue: OperationQueue.main,
+                    using: { notification in
+                        self.readStandardOutput(notification, progress: progress)
+                })
+            pipe.fileHandleForReading.readInBackgroundAndNotify()
+            
+            process.terminationHandler = { process in
+                DispatchQueue.main.async {
+                    completion?(
+                        process.terminationReason == .exit && process.terminationStatus == 0)
+                }
+            }
+            
+            process.launch()
+        }
+    }
+    
+    @objc public func readStandardOutput(
+        _ notification: Notification, progress: ((Int) -> ())? = nil) {
         
-        process.launchPath = decoderBinaryPath
-        process.arguments = [
+        if let data = notification.userInfo?[NSFileHandleNotificationDataItem] as? Data {
+            if data.count > 0 {
+                if let progressStr = String(data: data, encoding: .utf8) {
+                    let digitsSet = CharacterSet(charactersIn: "0123456789")
+                    let percent = "%"
+                    let scanner = Scanner(string: progressStr)
+                    var progressPercent: Int = 0
+                    
+                    while !scanner.isAtEnd {
+                        let prefixDecoding = progressStr.hasPrefix("Decoding...")
+                        var rc = true
+                        
+                        rc = rc && scanner.scanUpToCharacters(from: digitsSet, into: nil)
+                        rc = rc && (scanner.scanInt(&progressPercent) || prefixDecoding)
+                        rc = rc && (scanner.scanString(percent, into: nil) || prefixDecoding)
+                        
+                        if rc {
+                            progress?(progressPercent)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    private func argumentsFor(
+        movie: Movie, verifyOtrKeys: Bool, forceOverwritingOfFiles: Bool) -> [String] {
+        
+        var arguments = [
+            "-i", movie.qualifiedFilename!,
+            "-o", movie.targetPath!,
             "-e", email,
-            "-p", password,
-            "-i", filepath,
-            "-o", outputDirectory,
-            "-b", "\(bufferSize)"
+            "-p", password
         ]
         
-        if dontVerify {
-            process.arguments?.append("-q")
+        if verifyOtrKeys {
+            arguments.append("-q")
         }
         
-        if forceOverwrite {
-            process.arguments?.append("-f")
+        if forceOverwritingOfFiles {
+            arguments.append("-f")
         }
         
-        process.standardOutput = pipe
-        process.launch()
-        
-        var output: String! = ""
-        while process.isRunning {
-            output += String(data: fileHandle.readDataToEndOfFile(), encoding: String.Encoding.ascii)!
-        }
+        return arguments
     }
 }
